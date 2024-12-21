@@ -1,0 +1,23 @@
+
+<form class="form">
+  <span class="close" (click)="onNoClick()">X</span>
+
+  <div class="info">
+  <span class="title">Two-Factor Verification</span>
+<p class="description">Enter the two-factor authentication code provided by the authenticator app </p>
+   </div>
+    <div class="input-fields">
+    <input placeholder="" type="text" maxlength="1" [(ngModel)]="firstNO" name="firstNO">
+    <input placeholder="" type="text" maxlength="1"[(ngModel)]="secondNO" name="secondNO">
+    <input placeholder="" type="text" maxlength="1" [(ngModel)]="thirdNO" name="thirdNO">
+    <input placeholder="" type="text" maxlength="1" [(ngModel)]="fourthNO" name="fourthNO">
+  </div>@if (message) {
+    <div class="alert">{{message}}</div>
+  }
+
+      <div class="action-btns">
+        <a class="verify" (click)="verify()">Verify</a>
+        <a class="clear" (click)="reset()">Clear</a>
+      </div>
+
+</form>

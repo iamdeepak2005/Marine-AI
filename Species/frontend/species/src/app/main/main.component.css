@@ -1,0 +1,1001 @@
+.maino{
+  height: 0vh;
+  font-family: monospace; /* Font family */
+
+}
+.chat-container {
+    padding: 10px;
+    display: flex;
+    height: 0vh;
+    width: 100%;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    color: #e0e0e0;
+    transition: margin-left 0.3s ease;
+  }
+  
+  .sidebar {
+    width: 300px;
+    background-color: #121212;
+    color: #e0e0e0;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+  }
+  
+  .sidebar-closed {
+    transform: translateX(-300px);
+  }
+  
+  .toggle-sidebar {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+  }
+  
+  .toggle-sidebar svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .sidebar h2 {
+    margin-top: 0;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    margin: 5px 0;
+  }
+  
+  .chat-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    color: #e0e0e0;
+    position: relative;
+  }
+  
+  .messages-container {
+    flex: 1;
+    padding: 20px;
+    /* overflow-y: hidden; */
+    overflow-x: hidden;
+  }
+  
+  .message {
+    margin-bottom: 10px;
+  }
+  
+  .user-message {
+    text-align: right;
+  }
+  
+  .bot-message {
+    text-align: left;
+    font-size: 1rem;
+  }
+  
+  .input-container {
+    position: sticky;
+    display: flex;
+    align-items: flex-end;
+    border-top: 1px solid #333;
+    /* padding-top: 10px;
+    position: relative; */
+  }
+  
+  .upload-container {
+    position: relative;
+    margin-right: 10px;
+  }
+  
+  .upload-container .file-input {
+    display: none;
+  }
+  
+  .upload-container svg {
+    /* width: 5%; */
+    margin-right: 10px;
+    height: 24px;
+    position: absolute;
+  }
+  
+  .image-preview {
+    display: inline-block;
+    margin-top: 5px;
+  }
+  
+  .preview-image {
+    width: 50px;
+    height: auto;
+  }
+  
+  .input-box {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    color: #e0e0e0;
+    resize: none;
+    margin-right: 10px;
+  }
+  
+  .icon-button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .icon-button svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .sidebar {
+    width: 250px;
+    background-color: #171616;
+    color: #e0e0e0;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+    transition: transform 0.3s ease, width 0.3s ease;
+    transform: translateX(0);
+  }
+  
+  .sidebar-closed {
+    transform: translateX(-300px);
+    width: 0;
+  }
+  
+  .chat-container {
+    display: flex;
+    height: 90vh;
+    width: 100%;
+    background-color: #222222;
+    color: #e0e0e0;
+    transition: margin-left 0.3s ease;
+  }
+/* From Uiverse.io by vinodjangid07 */ 
+#checkbox {
+    display: none;
+  }
+  
+  .toggle {
+    position: relative;
+    width: 25px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition-duration: .5s;
+  }
+  
+  .bars {
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 4px;
+  }
+  
+  #bar2 {
+    transition-duration: .8s;
+  }
+  
+  #bar1,#bar3 {
+    width: 70%;
+  }
+  
+  #checkbox:checked + .toggle .bars {
+    position: absolute;
+    transition-duration: .5s;
+  }
+  
+  #checkbox:checked + .toggle #bar2 {
+    transform: scaleX(0);
+    transition-duration: .5s;
+  }
+  
+  #checkbox:checked + .toggle #bar1 {
+    width: 100%;
+    transform: rotate(45deg);
+    transition-duration: .5s;
+  }
+  
+  #checkbox:checked + .toggle #bar3 {
+    width: 100%;
+    transform: rotate(-45deg);
+    transition-duration: .5s;
+  }
+  
+  #checkbox:checked + .toggle {
+    transition-duration: .5s;
+    transform: rotate(180deg);
+  }
+  .recents{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+
+.container {
+    --color: #fff;
+    --size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    font-size: var(--size);
+    user-select: none;
+    fill: var(--color);
+  }
+  
+  .container .microphone-slash {
+    color: #171616;
+    position: absolute;
+    animation: keyframes-fill .5s;
+  }
+  .microphone, .microphone-slash {
+    fill: #512da8; /* Change the fill color to black */
+  }
+  
+  .container .microphone {
+    position: absolute;
+    display: none;
+    animation: keyframes-fill .5s;
+  }
+  
+  /* ------ On check event ------ */
+  .container input:checked ~ .microphone-slash {
+    display: none;
+  }
+  
+  .container input:checked ~ .microphone {
+    display: block;
+  }
+  
+  /* ------ Hide the default checkbox ------ */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* ------ Animation ------ */
+  @keyframes keyframes-fill {
+    0% {
+      transform: rotate(0deg) scale(0);
+      opacity: 0;
+    }
+  
+    50% {
+      transform: rotate(-10deg) scale(1.2);
+    }
+  }
+.input-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+/* From Uiverse.io by Nawsome */ 
+.wheel-and-hamster {
+  --dur: 1s;
+  position: relative;
+  width: 12em;
+  height: 12em;
+  font-size: 14px;
+}
+
+.wheel,
+.hamster,
+.hamster div,
+.spoke {
+  position: absolute;
+}
+
+.wheel,
+.spoke {
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.wheel {
+  background: radial-gradient(100% 100% at center,hsla(0,0%,60%,0) 47.8%,hsl(0,0%,60%) 48%);
+  z-index: 2;
+}
+
+.hamster {
+  animation: hamster var(--dur) ease-in-out infinite;
+  top: 50%;
+  left: calc(50% - 3.5em);
+  width: 7em;
+  height: 3.75em;
+  transform: rotate(4deg) translate(-0.8em,1.85em);
+  transform-origin: 50% 0;
+  z-index: 1;
+}
+
+.hamster__head {
+  animation: hamsterHead var(--dur) ease-in-out infinite;
+  background: hsl(30,90%,55%);
+  border-radius: 70% 30% 0 100% / 40% 25% 25% 60%;
+  box-shadow: 0 -0.25em 0 hsl(30,90%,80%) inset,
+		0.75em -1.55em 0 hsl(30,90%,90%) inset;
+  top: 0;
+  left: -2em;
+  width: 2.75em;
+  height: 2.5em;
+  transform-origin: 100% 50%;
+}
+
+.hamster__ear {
+  animation: hamsterEar var(--dur) ease-in-out infinite;
+  background: hsl(0,90%,85%);
+  border-radius: 50%;
+  box-shadow: -0.25em 0 hsl(30,90%,55%) inset;
+  top: -0.25em;
+  right: -0.25em;
+  width: 0.75em;
+  height: 0.75em;
+  transform-origin: 50% 75%;
+}
+
+.hamster__eye {
+  animation: hamsterEye var(--dur) linear infinite;
+  background-color: hsl(0,0%,0%);
+  border-radius: 50%;
+  top: 0.375em;
+  left: 1.25em;
+  width: 0.5em;
+  height: 0.5em;
+}
+
+.hamster__nose {
+  background: hsl(0,90%,75%);
+  border-radius: 35% 65% 85% 15% / 70% 50% 50% 30%;
+  top: 0.75em;
+  left: 0;
+  width: 0.2em;
+  height: 0.25em;
+}
+
+.hamster__body {
+  animation: hamsterBody var(--dur) ease-in-out infinite;
+  background: hsl(30,90%,90%);
+  border-radius: 50% 30% 50% 30% / 15% 60% 40% 40%;
+  box-shadow: 0.1em 0.75em 0 hsl(30,90%,55%) inset,
+		0.15em -0.5em 0 hsl(30,90%,80%) inset;
+  top: 0.25em;
+  left: 2em;
+  width: 4.5em;
+  height: 3em;
+  transform-origin: 17% 50%;
+  transform-style: preserve-3d;
+}
+
+.hamster__limb--fr,
+.hamster__limb--fl {
+  clip-path: polygon(0 0,100% 0,70% 80%,60% 100%,0% 100%,40% 80%);
+  top: 2em;
+  left: 0.5em;
+  width: 1em;
+  height: 1.5em;
+  transform-origin: 50% 0;
+}
+
+.hamster__limb--fr {
+  animation: hamsterFRLimb var(--dur) linear infinite;
+  background: linear-gradient(hsl(30,90%,80%) 80%,hsl(0,90%,75%) 80%);
+  transform: rotate(15deg) translateZ(-1px);
+}
+
+.hamster__limb--fl {
+  animation: hamsterFLLimb var(--dur) linear infinite;
+  background: linear-gradient(hsl(30,90%,90%) 80%,hsl(0,90%,85%) 80%);
+  transform: rotate(15deg);
+}
+
+.hamster__limb--br,
+.hamster__limb--bl {
+  border-radius: 0.75em 0.75em 0 0;
+  clip-path: polygon(0 0,100% 0,100% 30%,70% 90%,70% 100%,30% 100%,40% 90%,0% 30%);
+  top: 1em;
+  left: 2.8em;
+  width: 1.5em;
+  height: 2.5em;
+  transform-origin: 50% 30%;
+}
+
+.hamster__limb--br {
+  animation: hamsterBRLimb var(--dur) linear infinite;
+  background: linear-gradient(hsl(30,90%,80%) 90%,hsl(0,90%,75%) 90%);
+  transform: rotate(-25deg) translateZ(-1px);
+}
+
+.hamster__limb--bl {
+  animation: hamsterBLLimb var(--dur) linear infinite;
+  background: linear-gradient(hsl(30,90%,90%) 90%,hsl(0,90%,85%) 90%);
+  transform: rotate(-25deg);
+}
+
+.hamster__tail {
+  animation: hamsterTail var(--dur) linear infinite;
+  background: hsl(0,90%,85%);
+  border-radius: 0.25em 50% 50% 0.25em;
+  box-shadow: 0 -0.2em 0 hsl(0,90%,75%) inset;
+  top: 1.5em;
+  right: -0.5em;
+  width: 1em;
+  height: 0.5em;
+  transform: rotate(30deg) translateZ(-1px);
+  transform-origin: 0.25em 0.25em;
+}
+
+.spoke {
+  animation: spoke var(--dur) linear infinite;
+  background: radial-gradient(100% 100% at center,hsl(0,0%,60%) 4.8%,hsla(0,0%,60%,0) 5%),
+		linear-gradient(hsla(0,0%,55%,0) 46.9%,hsl(0,0%,65%) 47% 52.9%,hsla(0,0%,65%,0) 53%) 50% 50% / 99% 99% no-repeat;
+}
+
+/* Animations */
+@keyframes hamster {
+  from, to {
+    transform: rotate(4deg) translate(-0.8em,1.85em);
+  }
+
+  50% {
+    transform: rotate(0) translate(-0.8em,1.85em);
+  }
+}
+
+@keyframes hamsterHead {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(0);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes hamsterEye {
+  from, 90%, to {
+    transform: scaleY(1);
+  }
+
+  95% {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes hamsterEar {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(0);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(12deg);
+  }
+}
+
+@keyframes hamsterBody {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(0);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(-2deg);
+  }
+}
+
+@keyframes hamsterFRLimb {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(50deg) translateZ(-1px);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(-30deg) translateZ(-1px);
+  }
+}
+
+@keyframes hamsterFLLimb {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(-30deg);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(50deg);
+  }
+}
+
+@keyframes hamsterBRLimb {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(-60deg) translateZ(-1px);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(20deg) translateZ(-1px);
+  }
+}
+
+@keyframes hamsterBLLimb {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(20deg);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(-60deg);
+  }
+}
+
+@keyframes hamsterTail {
+  from, 25%, 50%, 75%, to {
+    transform: rotate(30deg) translateZ(-1px);
+  }
+
+  12.5%, 37.5%, 62.5%, 87.5% {
+    transform: rotate(10deg) translateZ(-1px);
+  }
+}
+
+@keyframes spoke {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(-1turn);
+  }
+}
+.loader{
+  position: absolute;
+  top: 30%;
+  left: 40%;
+}
+
+.uploaded-image {
+  max-width: 60%; /* Prevents the image from exceeding the width of its container */
+  max-height: 20vh; /* Sets a maximum height for the image */
+  width: auto; /* Maintains the original aspect ratio */
+  height: auto; /* Maintains the original aspect ratio */
+  border-radius: 8px; /* Optional: adds rounded corners */
+  margin-top: 10px; /* Adds some space above the image */
+  display: block; /* Ensures the image behaves like a block element */
+}
+/* Chat area styles */
+.chat-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Aligns messages to the bottom */
+  height: 85vh; /* Full height of the viewport */
+  width: 100%;
+  padding: 15px;
+  overflow-y: hidden; /* Enable scrolling */
+}
+
+/* Container for messages */
+.messages-container {
+  display: flex;
+  flex-direction: column;
+  /* gap: 10px; Space between messages */
+  flex-grow: 1; /* Allow the container to grow and fill available space */
+}
+
+/* Message styles */
+.message {
+  max-width: 75%; /* Limit the width of messages */
+  padding: 10px 15px;
+  border-radius: 12px;
+
+  position: relative;
+  word-wrap: break-word; /* Break long words */
+}
+
+/* User message styles */
+.user-message {
+  align-self: flex-end; /* Align user messages to the right */
+  /* background: linear-gradient(to right, #5c6bc0, #512da8); */
+  border-radius: 15px;
+  
+  padding: 5px;
+  color: #001F3F; /* White text color for user messages */
+  border-top-right-radius:0px ; /* Rounded corners */
+
+}
+
+/* Bot message styles */
+.bot-message {
+  align-self: flex-start; /* Align bot messages to the left */
+  color: #001F3F; /* Light gray for bot text */
+   /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);  */
+  border-top-left-radius:0px ; /* Rounded corners */
+
+}
+.message-container {
+  display: flex;
+  flex-direction: column; /* Keeps the message container's messages stacked vertically */
+  margin-bottom: 10px; /* Add space between each message */
+}
+
+.footer{
+  position: relative;
+  top: 10px;
+}
+.image-row {
+  display: flex; /* Ensures images are in a row */
+  gap: 10px; /* Adds space between the images */
+  justify-content: flex-start; /* Aligns images to the left */
+  flex-wrap: nowrap; /* Prevents images from wrapping to the next line */
+}
+
+.image-container {
+  flex-shrink: 0; /* Prevents the image container from shrinking */
+}
+
+.uploaded-image {
+  max-width: 200px; /* Adjusts image size, ensure it's responsive */
+  height: auto; /* Keeps the aspect ratio intact */
+}
+
+
+/* Image styles */
+.uploaded-image {
+  max-width: 100%; /* Responsive image */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Rounded corners for images */
+}
+
+/* Optional: Add a small triangle pointer for user messages */
+.user-message::after {
+  content: '';
+  position: absolute;
+  top: 10px; /* Adjust as needed */
+  right: -10px; /* Position to the right */
+  border-width: 10px; /* Size of the triangle */
+}
+
+/* Optional: Add a small triangle pointer for bot messages */
+.bot-message::after {
+
+  content: '';
+  position: absolute;
+  top: 10px; /* Adjust as needed */
+  left: -10px; /* Position to the left */
+  border-width: 10px; /* Size of the triangle */
+  border-style: solid;
+  border-color: transparent #222222 transparent transparent; 
+}
+
+/* Smooth scroll for chat area */
+.chat-area {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #c9d6ff #e2e2e2; /* Adjust scrollbar color for Firefox */
+}
+
+/* For Webkit browsers (Chrome, Safari) */
+.chat-area::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-area::-webkit-scrollbar-track {
+  background: linear-gradient(to right, #e2e2e2, #c9d6ff); /* Gradient for scrollbar track */
+}
+
+.chat-area::-webkit-scrollbar-thumb {
+  background: transparent; /* Hide the scrollbar thumb */
+  border-radius: 10px; /* Rounded scrollbar */
+}
+
+
+
+/* Container for messages */
+/* From Uiverse.io by gagan-gv */ 
+.spinner {
+  height: 50px;
+  width: max-content;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: monospace;
+  letter-spacing: 1em;
+  color: #5c6bc0 ;
+  filter: drop-shadow(0 0 10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+ 
+ .spinner span {
+  animation: loading6454 1.75s ease infinite;
+ }
+ 
+ .spinner span:nth-child(2) {
+  animation-delay: 0.25s;
+ }
+ 
+ .spinner span:nth-child(3) {
+  animation-delay: 0.5s;
+ }
+ 
+ .spinner span:nth-child(4) {
+  animation-delay: 0.75s;
+ }
+ 
+ .spinner span:nth-child(5) {
+  animation-delay: 1s;
+ }
+ 
+ .spinner span:nth-child(6) {
+  animation-delay: 1.25s;
+ }
+ 
+ .spinner span:nth-child(7) {
+  animation-delay: 1.5s;
+ }
+ 
+ @keyframes loading6454 {
+  0%, 100% {
+   transform: translateY(0);
+  }
+ 
+  50% {
+   transform: translateY(-10px);
+  }
+ }
+
+ .promptcontainer {
+  position: sticky;
+  top: 10px; /* Adjust to your preferred sticky position */
+  z-index: 10; /* To ensure it's above other content */
+  background-color: #333; /* Optional, for better visibility */
+  padding: 10px;
+  border-radius: 20px;
+  height: 10vh;
+}
+p{
+  font-size: 0.8rem;
+}
+.warn{
+  text-align: center;
+  font-size: 0.6rem;
+}
+.input-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* position: absolute; */
+  border-radius: 20px;
+  position: relative;
+  top: -10px;
+  height: 10vh;
+}
+@media (max-width: 768px) {
+  .loader{
+    height: 50%;
+  }
+  .chat-area{
+    height: 85vh;
+  }
+  .messages-container{
+    padding: 5px;
+
+  }
+  .mic{
+    display: none;
+  }
+  .input-container{
+    gap: 10px;
+  }
+
+  
+}
+.chat-area{
+  height: 87vh;
+}
+.bot-message{
+  width: 80%;
+  border-radius: 0px 20px 20px 20px;
+}
+.question-list {
+  list-style: none; /* Remove default numbering */
+  padding-left: 0; /* Remove default padding */
+  margin: 20px 0; /* Spacing around the list */
+}
+
+.question-list li {
+  overflow-y: auto;
+  max-width: 35%;
+  cursor: pointer; /* Change cursor to pointer on hover */
+  padding: 10px 20px; /* Space around each list item */
+  background: linear-gradient(to right, #5c6bc0, #512da8);
+  border-radius: 5px; /* Rounded corners */
+  position: relative; /* Enable absolute positioning for the number */
+  margin-bottom: 5px; /* Space between items */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  font-size: 0.8rem; /* Font size */
+  border-radius: 0px 20px 20px 20px;
+
+}
+
+.question-list li::before {
+  content: counter(item) ". "; /* Numbering */
+  counter-increment: item; /* Increment the counter */
+  position: absolute; /* Position number absolutely */
+  left: 10px; /* Position number from left */
+  color: #ffffff; /* Number color */
+}
+
+.question-list {
+  counter-reset: item; /* Reset counter for the list */
+}
+.question-list li:hover {
+  background-color: #555555; /* Hover background color */
+}
+.preload{
+  display: flex;
+}
+/* From Uiverse.io by satyamchaudharydev */ 
+/* this card is inspired form this - https://georgefrancis.dev/ */
+
+.card {
+  font-family: monospace;
+  --border-radius: 0.75rem;
+  --primary-color: #7257fa;
+  --secondary-color: #3c3852;
+  width: 210px;
+  font-family: monospace; /* Font family */
+
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  background: #f1f1f3;
+  box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 3%);
+  position: relative;
+}
+
+.card > * + * {
+  margin-top: 1.1em;
+}
+
+.card .card__content {
+  color: var(--secondary-color);
+  font-size: 0.86rem;
+}
+
+.card .card__title {
+  padding: 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.card .card__date {
+  color: #6e6b80;
+  font-size: 0.8rem;
+}
+
+.card .card__arrow {
+  position: absolute;
+  background: var(--primary-color);
+  padding: 0.4rem;
+  border-top-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  bottom: 0;
+  right: 0;
+  transition: 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.card svg {
+  transition: 0.2s;
+}
+
+/* hover */
+.card:hover .card__title {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.card:hover .ycard__arrow {
+  background: #111;
+}
+
+textarea{
+  font-family: monospace;
+}
+.card:hover .card__arrow svg {
+  transform: translateX(3px);
+}
+
+h3{
+  color: #5e497f; /* Light purple for menu items */
+  font-family: monospace; /* Font family */
+
+}
+/* Optional: Style for the selected question if needed */
+.question-list li.selected {
+  background-color: #007BFF; /* Selected item background */
+  color: #ffffff; /* Selected text color */
+}
+strong{
+  color:#2980B9 ;
+}
+.map-wrap {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 77px); /* calculate height of the screen minus the heading */
+}
+
+.map {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.promptcontainer {
+  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+  border-radius: 10px; /* Rounded corners for a modern look */
+}
+
+.input-container {
+  background: #ffffff; /* White background for the input area */
+  border: 1px solid #d0d0d0; /* Light gray border */
+  border-radius: 20px; /* Rounded corners */
+}
+
+.input-box {
+  background: #f8f8f8; /* Light gray background for the text area */
+  color: #333333; /* Dark gray text */
+  border: 1px solid #d0d0d0; /* Light gray border */
+  border-radius: 20px; /* Slightly rounded corners */
+}
+
+.icon-button {
+  background: #4a90e2; /* Soft blue button */
+  color: #ffffff; /* White text on button */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Change cursor on hover */
+  padding: 5px;
+  margin-right: 5px;
+}
+
+.icon-button:hover {
+  background: #357ABD; /* Darker blue on hover */
+}
+
+.warn {
+  color: #FF7043; /* Orange warning text */
+}
+.carddisplay{
+  display: flex;
+  gap: 20px;
+}
+.card{
+  width:25% ;
+  height: 45vh;
+  overflow: auto;
+}

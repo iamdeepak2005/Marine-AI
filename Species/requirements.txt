@@ -1,0 +1,15 @@
+PyPDF2
+langchain
+google-generativeai
+faiss-cpu
+python-dotenv
+fastapi
+pydantic
+mysql-connector-python
+sendgrid
+bcrypt
+python-dotenv
+opencv-python
+langchain
+pyyaml
+python-multipart

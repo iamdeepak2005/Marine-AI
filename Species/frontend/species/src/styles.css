@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Example in src/styles.css */
+
+/* styles.css or styles.scss */
+body {
+    font-family: 'Roboto', sans-serif !important;
+}
+
+
+/* Ensure the entire page uses the dark background */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Full height to cover the viewport */
+    overflow-x: hidden;
+     /* Prevent horizontal scrolling */
+}
+
+/* For all scrollable sections, including chat area */
+.chat-area, .scrollable-section {
+    background-color: #1d1d1d; /* Same dark theme background */
+    height: 100%; /* Make sure it takes full height */
+    overflow-y: auto; /* Allow vertical scrolling */
+}
+
+/* Add background to all sections to prevent white flash */
+section, .main-container {
+    background-color: #1d1d1d; /* Ensure all sections match the dark theme */
+}
+
+/* Ensure the footer or any other area at the bottom is styled */
+footer {
+    background-color: #1d1d1d; /* Footer dark theme */
+}
+
+/* Scrollbar Styling to match dark theme */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1d1d1d; /* Dark background for scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #3c3c3c; /* Lighter scrollbar thumb */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #5a5a5a; /* Hover effect on scrollbar */
+}
+body {
+    margin: 0;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+ }
+::ng-deep .snackBar {
+    --mdc-snackbar-container-color: #512da8 !important; /* Purple background */
+    --mdc-snackbar-supporting-text-color: white !important; /* White text */
+    font-size: 16px !important;
+    font-family: 'Roboto', sans-serif !important;
+    border-radius: 8px !important;
+    padding: 16px !important;
+}
+
+::ng-deep .snackBar button {
+    --mdc-snackbar-container-color: #512da8 !important; /* Match the background */
+    --mdc-mdc-snack-bar-supporting-button-color: white !important; /* White button text */
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+}
+  

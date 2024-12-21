@@ -1,0 +1,56 @@
+<!-- <div class="main">
+    <div class="form-container">
+      <div class="title">Forgot Password</div>
+      <form class="form"  #forgetPasswordForm="ngForm">
+        <input type="email" placeholder="Enter your email" class="input"  name="email"
+        [(ngModel)]="email" required />
+        @if (isPassword) {
+          <input type="password" placeholder="Enter your Password" class="input"  name="password"
+          [(ngModel)]="pass" required />
+          <button type="submit" class="form-btn" (click)="resetPassword()">Reset Password</button>
+        }@else {
+          <button type="submit" class="form-btn" (click)="onSubmit(forgetPasswordForm)">Send Reset Mail</button>
+        }
+
+      </form>
+      <div class="page-link">
+        <span class="page-link-label">Remembered your password?</span>
+        <a href="/login" class="sign-up-link">Sign In</a>
+      </div>
+    </div>
+  </div> -->
+
+<div class="main">
+  <div class="container">
+    <div class="form-container forgot-password-container">
+        <form action="#" #forgetPasswordForm="ngForm">
+            <h1>Forgot Password</h1>
+            <p>Enter Mail to reset your password.</p>
+            <input type="email" placeholder="Email" name="email" [(ngModel)]="email" required />
+            @if (isPassword) {
+              <input type="password" placeholder="Enter your Password" class="input"  name="password"
+              [(ngModel)]="pass" required />
+              <button type="submit" class="form-btn" (click)="resetPassword()">Reset Password</button>
+            }@else {
+              <button type="submit" class="form-btn" (click)="onSubmit(forgetPasswordForm)">Send Reset Mail</button>
+            }
+            <a href="#">Back to Sign In</a>
+            
+        </form>
+    </div>
+    <div class="toggle-container">
+        <div class="toggle">
+            <div class="toggle-panel toggle-left">
+                <h1>Hello, Friend!</h1>
+                <p>Sign in with your credentials to continue.</p>
+                <button class="hidden">SIGN IN</button>
+            </div>
+            <div class="toggle-panel toggle-right">
+                <h1>Forgot Password</h1>
+                <p>Retrieve your password by entering your email.</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+  
